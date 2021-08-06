@@ -1,11 +1,20 @@
 // ======================= объект рефов ==========================
 
 const refs = {
-    daysCounter: document.querySelector('[data-value="days"]'),
-    hoursCounter: document.querySelector('[data-value="hours"]'),
-    minsCounter: document.querySelector('[data-value="mins"]'),
-    secsCounter: document.querySelector('[data-value="secs"]'),
-}
+  dateInput: document.getElementById("target-date"),
+  timeInput: document.getElementById("target-time"),
+  startBtn: document.querySelector(".start-countdown"),
+  daysCounter: document.querySelector('[data-value="days"]'),
+  hoursCounter: document.querySelector('[data-value="hours"]'),
+  minsCounter: document.querySelector('[data-value="mins"]'),
+  secsCounter: document.querySelector('[data-value="secs"]'),
+};
+
+//================ слушатели событий ==============================
+
+refs.dateInput.addEventListener("input", onDateInput);
+refs.timeInput.addEventListener("input", onTimeInput);
+refs.startBtn.addEventListener("click", startTimer);
 
 // ================ ссылки на табло с цифрами ====================
 
@@ -14,13 +23,28 @@ const hoursCounterValue = refs.daysCounter.textContent;
 const minsCounterValue = refs.daysCounter.textContent;
 const secsCounterValue = refs.daysCounter.textContent;
 
+//===============================================
+let timerId = null;
+let time = null;
 
+function onDateInput(e) {
+  console.log(refs.dateInput.value);
+}
 
+function onTimeInput(e) {
+  console.log(refs.timeInput.value);
+}
 
-new CountdownTimer({
-  selector: '#timer-1',
-  targetDate: new Date('Jul 17, 2019'),
-});
+function startTimer() {
+  // =================== не понятно как перенести время с инпута в таймер
+  const targetDate = new Date(refs.dateInput.value + refs.timeInput.value);
+  console.log(targetDate);
+}
+
+// new CountdownTimer({
+//   selector: "#timer-1",
+//   targetDate: new Date("Jul 17, 2019"),
+// });
 
 /*
  * Оставшиеся дни: делим значение UTC на 1000 * 60 * 60 * 24, количество
