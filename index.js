@@ -1,45 +1,45 @@
 // ======================= объект рефов ==========================
 
-const refs = {
-  dateInput: document.getElementById("target-date"),
-  timeInput: document.getElementById("target-time"),
-  startBtn: document.querySelector(".start-countdown"),
-  daysCounter: document.querySelector('[data-value="days"]'),
-  hoursCounter: document.querySelector('[data-value="hours"]'),
-  minsCounter: document.querySelector('[data-value="mins"]'),
-  secsCounter: document.querySelector('[data-value="secs"]'),
-};
+// const refs = {
+//   dateInput: document.getElementById("target-date"),
+//   timeInput: document.getElementById("target-time"),
+//   startBtn: document.querySelector(".start-countdown"),
+//   daysCounter: document.querySelector('[data-value="days"]'),
+//   hoursCounter: document.querySelector('[data-value="hours"]'),
+//   minsCounter: document.querySelector('[data-value="mins"]'),
+//   secsCounter: document.querySelector('[data-value="secs"]'),
+// };
 
-//================ слушатели событий ==============================
+// //================ слушатели событий ==============================
 
-refs.dateInput.addEventListener("input", onDateInput);
-refs.timeInput.addEventListener("input", onTimeInput);
-refs.startBtn.addEventListener("click", startTimer);
+// refs.dateInput.addEventListener("input", onDateInput);
+// refs.timeInput.addEventListener("input", onTimeInput);
+// refs.startBtn.addEventListener("click", startTimer);
 
-// ================ ссылки на табло с цифрами ====================
+// // ================ ссылки на табло с цифрами ====================
 
-const daysCounterValue = refs.daysCounter.textContent;
-const hoursCounterValue = refs.daysCounter.textContent;
-const minsCounterValue = refs.daysCounter.textContent;
-const secsCounterValue = refs.daysCounter.textContent;
+// const daysCounterValue = refs.daysCounter.textContent;
+// const hoursCounterValue = refs.daysCounter.textContent;
+// const minsCounterValue = refs.daysCounter.textContent;
+// const secsCounterValue = refs.daysCounter.textContent;
 
-//===============================================
-let timerId = null;
-let time = null;
+// //===============================================
+// let timerId = null;
+// let time = null;
 
-function onDateInput(e) {
-  console.log(refs.dateInput.value);
-}
+// function onDateInput(e) {
+//   console.log(refs.dateInput.value);
+// }
 
-function onTimeInput(e) {
-  console.log(refs.timeInput.value);
-}
+// function onTimeInput(e) {
+//   console.log(refs.timeInput.value);
+// }
 
-function startTimer() {
-  // =================== не понятно как перенести время с инпута в таймер
-  const targetDate = new Date(refs.dateInput.value + refs.timeInput.value);
-  console.log(targetDate);
-}
+// function startTimer() {
+//   // =================== не понятно как перенести время с инпута в таймер
+//   const targetDate = new Date(refs.dateInput.value + refs.timeInput.value);
+//   console.log(targetDate);
+// }
 
 // new CountdownTimer({
 //   selector: "#timer-1",
